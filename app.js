@@ -28,8 +28,6 @@ app.use('/home', homeRouter);
 app.get('/', function (req, res) {
     res.render("index", {
         nav: [
-            { link: '/books', name: 'Books' },
-            { link: '/authors', name: 'Authors' },
             { link: '/login', name: 'Login/Signup' }
         ],
         title: 'Library'
