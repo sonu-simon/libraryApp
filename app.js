@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 3000;
 
 const nav = [
     { link: '/books', name: 'Books' },
-    { link: '/authors', name: 'Authors'},
-    { link: '/', name: 'Logout'}
+    { link: '/authors', name: 'Authors' },
+    { link: '/', name: 'Logout' }
 ];
 
 const booksRouter = require('./src/routes/bookRoutes')(nav);
@@ -28,11 +29,13 @@ app.get('/', function (req, res) {
     res.render("index", {
         nav: [
             { link: '/books', name: 'Books' },
-            { link: '/authors', name: 'Authors'},
-            { link: '/login', name: 'Login/Signup'}
+            { link: '/authors', name: 'Authors' },
+            { link: '/login', name: 'Login/Signup' }
         ],
         title: 'Library'
     });
 });
 
-app.listen(3000);
+app.listen(port, () => {
+    console.log("Server ready at" + port)
+});
