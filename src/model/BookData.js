@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/library');
+mongoose.connect('mongodb+srv://user1:user1@library.oyj8f.mongodb.net/LibraryApp?retryWrites=true&w=majority');
 const schema = mongoose.Schema;
 
 //Shema definition - using constructor method (new)
