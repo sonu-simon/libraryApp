@@ -4,13 +4,12 @@ mongoose.connect('mongodb+srv://userone:userone@ictak.6lvlw.mongodb.net/LIBRARYA
 const schema = mongoose.Schema;
 
 //Shema definition - using constructor method (new)
-const BookSchema = new schema({
-    title: String,
-    author: String,
-    genre: String,
-    image: String
+const AccountSchema = new schema({
+    email: String,
+    // phone: String,
+    password: String,
 });
 
-var BookData = mongoose.model('BookData', BookSchema);
+var AccountData = mongoose.model('AccountData', AccountSchema);
 
-module.exports = BookData;
+module.exports = AccountData;

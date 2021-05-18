@@ -1,6 +1,18 @@
 const express = require('express');
 const app = express();
+const session = require('express-session');
 const port = process.env.PORT || 3000;
+
+const sessTime= 2*60*60*1000;
+const {
+    PORT=8080,
+    NODE_ENV = 'development',
+    SESS_NAME='sid',
+    SESS_SECRET= 'ssh!quiet,it\'asecret!',
+    SESS_LIFETIME= sessTime
+} = process.env;
+
+const IN_PROD = NODE_ENV ==='production';
 
 const nav = [
     { link: '/books', name: 'Books' },
@@ -15,6 +27,20 @@ const signupRouter = require('./src/routes/signupRouter')(nav);
 const loginRouter = require('./src/routes/loginRouter')(nav);
 const homeRouter = require('./src/routes/homeRouter')(nav);
 const adminRouter = require('./src/routes/adminRoutes')(nav);
+
+app.use(express.urlencoded({extended:true}));
+app.use(express.static('./public'));
+app.use(session({
+    name: SESS_NAME,
+    resave: false,
+    saveUninitialized: false,
+    secret: SESS_SECRET,
+    cookie:{
+        maxAge: SESS_LIFETIME,
+        sameSite: true,
+        secure: IN_PROD
+    }
+}));
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.static('./public'));

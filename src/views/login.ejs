@@ -91,14 +91,14 @@
           
           
           <!--Form-->
-          <form class="col-lg-8 upform" action="/books" onsubmit="return loginval()">
+          <form class="col-lg-8 upform" action="/login/auth" onsubmit="return loginval()" method="POST">
             <div class="mb-3">
                 <label for="exampleInputUserName" class="form-label">Username</label>
-                <input type="text" class="form-control" id="loginuser" required>
+                <input type="text" class="form-control" id="loginuser" name="email" required>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="loginpass" required>
+                <input type="password" class="form-control" id="loginpass" name="password" required>
             </div>
             <br>
             <div>

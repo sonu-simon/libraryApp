@@ -91,21 +91,21 @@
           
           
           <!--Form-->
-          <form class="col-lg-8 upform" action="/books" onsubmit="return loginval()">
+          <form class="col-lg-8 upform" action="/signup/auth" onsubmit="return loginval()" method="POST">
             <div class="mb-3">
                 <label for="exampleInputUserName" class="form-label">Username</label>
-                <input type="text" class="form-control" id="loginuser" required>
+                <input type="text" class="form-control" id="loginuser" name="email" required>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="loginpass" required>
+                <input type="password" class="form-control" id="loginpass" name="pwd" required>
             </div>
             <br>
             <div>
-                <a href="/signup" id="accnt">I don't have an account ! Sign Up</a>
+                <a href="/login" id="accnt">Already a user? Login</a>
             </div>
             <div class="mb-3">
-                <button type="submit" class="btn btn-primary" id="up-btn">LogIn</button>
+                <button type="submit" class="btn btn-primary" id="up-btn">SignUp</button>
             </div>
           </form>
           

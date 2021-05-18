@@ -22,7 +22,7 @@ function router(nav){
             book : "Jobs",
             genre : "Autobiography",
             img : "edward.jpg",
-            // about : "Edward Abbey, (born January 29, 1927, Indiana, Pennsylvania, U.S.—died March 14, 1989, near Tucson [now in Tucson], Arizona), American writer whose works, set primarily in the southwestern United States, reflect an uncompromising environmentalist philosophy.His book Desert Solitaire (1968), is considered by many to be his best."
+            // about : "Edward Abbey, (born  January 29, 1927, Indiana, Pennsylvania, U.S.—died March 14, 1989, near Tucson [now in Tucson], Arizona), American writer whose works, set primarily in the southwestern United States, reflect an uncompromising environmentalist philosophy.His book Desert Solitaire (1968), is considered by many to be his best."
         }
     ]
     
